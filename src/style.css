@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+  font-family: Courier, monospace;
+  color: white;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin: 0;
+  background-color: darkslategray;
+}
+
+p {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+#app {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.gameover,
+.menu {
+  display: none;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: absolute;
+  padding: 1rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: red;
+  border-radius: 2rem;
+  z-index: 9999;
+}
+
+.botao-comecar {
+  background-color: gray;
+  font-size: 2rem;
+  border-radius: 1rem;
+}
+
+.placar {
+  display: flex;
+  justify-content: space-evenly;
+  flex: 0 1 auto;
+  width: 100%;
+
+  background-color: darkred;
+}
+
+.pontos {
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.cronometro {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.espaco {
+  position: relative;
+  flex: 1 1 auto;
+
+  padding-block: 1rem;
+  width: 100%;
+
+  background-color: midnightblue;
+}
+
+.estrela {
+  user-select: none;
+  box-sizing: border-box;
+  position: absolute;
+  width: fit-content;
+  display: flex;
+  color: yellow;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.alvo {
+  user-select: none;
+  box-sizing: border-box;
+  position: absolute;
+  width: fit-content;
+  display: flex;
+  font-size: 2rem;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+  animation: rotacionando 2s linear infinite, desaparecendo 1500ms linear infinite;
+}
+
+.escondido {
+  display: none;
+}
+
+@keyframes rotacionando {
+  from {
+    transform: rotate(0deg);
+    opacity: 100%;
+  }
+
+  to {
+    transform: rotate(360deg);
+    opacity: 30%;
+  }
+}
+
+@keyframes desaparecendo {
+  from {
+    opacity: 100%;
+  }
+
+  to {
+    opacity: 50%;
+  }
+}
